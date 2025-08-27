@@ -1,7 +1,16 @@
 <section>
-    <div class="card" style="width: 18rem;">
-  <div class="card-body">
-    <h5 class="card-title">LOGIN</h5>
+  <div class="card" style="width: 18rem;">
+    <div class="card-body">
+      <h3 class="card-title">Login</h3>
+      <form [formGroup]="loginFormular" (ngSubmit)="onSubmit()">
+        <div class="input-group">
+          <input type="text" class="form-control" placeholder="username@mail.com" formControlName="username">
+        </div>
+        <div class="input-group">
+          <input type="password" class="form-control" placeholder="password" formControlName="password">
+        </div>
+        <button type="submit" class="btn btn-dark mt-3 w-100" routerLink="dashboard">Submit</button>
+      </form>
+    </div>
   </div>
-</div>
 </section>

@@ -1,6 +1,5 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, httpResource } from '@angular/common/http';
 import { Injectable, inject } from '@angular/core';
-import { Observable } from 'rxjs';
 import { Student } from './student';
 
 @Injectable({
@@ -8,7 +7,9 @@ import { Student } from './student';
 })
 export class StudentService {
   httpClient = inject(HttpClient)
-  getAllStudents(): Observable<Student[]> {
-    return this.httpClient.get<Student[]>("test")
+
+
+  getAllStudents() {
+    return httpResource<Student[]>(() => "https://jsonplaceholder.typicode.com/users")
   }
 }

@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-
+import { Component, inject} from '@angular/core';
+import { StudentService } from '../../student-service';
 @Component({
   selector: 'app-students',
   imports: [],
@@ -7,5 +7,9 @@ import { Component } from '@angular/core';
   styleUrl: './students.css'
 })
 export class Students {
+  studentList = inject(StudentService).getAllStudents()
 
+  constructor() {
+
+  }
 }
